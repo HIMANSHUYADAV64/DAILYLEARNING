@@ -1,2 +1,52 @@
 docker is a conterization service
-  docker 
+  docker  vs vm
+Based on the sources, here is a comparison table between Docker Containers and Virtual Machines (VMs) focusing on their core concepts and architectural differences:
+Feature	
+Docker Container	
+Virtual Machine (VM)
+Basic Definition	
+An emulation of a user-space instance where processes run; a lightweight package containing code and its environment
+.	
+An emulation of a physical machine—including virtualized hardware—running its own operating system
+.
+Virtualization Level	
+Abstracts operating system details from the application code
+.	
+Abstracts hardware details (CPU, memory, etc.) from the application code
+.
+Core Objective	
+To provide environment consistency and lightweight portability across development, testing, and production
+.	
+To allow multiple operating systems to run on one physical machine to increase hardware utilization
+.
+Management	
+Coordinated by the Docker Engine, which sits between the OS and the containers
+.	
+Coordinated by a Hypervisor, which sits between the physical hardware and the VMs
+.
+Architecture	
+Shares the host kernel directly; containers only contain their dependencies
+.	
+Runs a full guest operating system and its own kernel for every instance
+.
+Resource Usage	
+On-demand; requests only what is needed from the host kernel
+.	
+Fixed amount; occupies a specific amount of resources defined at startup
+.
+Security/Isolation	
+Lower isolation; at risk if there are vulnerabilities in the host kernel
+.	
+Higher isolation; each application is buffered by its own entire guest operating system
+.
+When to Choose One Over the Other
+According to the sources, your choice should depend on your specific application requirements:
+Use Docker Containers for microservice architectures, rapid deployment cycles, lightweight resource needs, and situations requiring quick scalability
+.
+Use Virtual Machines for legacy applications, requirements for a specific older operating system, applications with substantial hardware needs, or when you need deep control over OS settings
+.
+
+
+
+
+
